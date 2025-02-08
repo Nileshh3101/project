@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #ffdde1;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h1 {
+            color: #ff4d6d;
+        }
+        .teddy {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .buttons {
+            margin-top: 20px;
+            position: relative;
+        }
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+        }
+        #yes {
+            background-color: #ff4d6d;
+            color: white;
+        }
+        #no {
+            background-color: white;
+            color: #ff4d6d;
+            position: absolute;
+        }
+        #message {
+            font-size: 40px;
+            font-weight: bold;
+            color: green;
+            display: none;
+        }
+        .teddy img {
+            width: 150px;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>💖 Will you be my Valentine? 💖</h1>
+        <div class="teddy">
+            <img src="images/teddy1.png" alt="Teddy Bear 1">
+            <img src="images/teddy2.avif" alt="Teddy Bear 2">
+        </div>
+        <div class="buttons">
+            <button id="yes" onclick="sayYes()">Yes</button>
+            <button id="no" onclick="moveNo()">No</button>
+        </div>
+        <div id="message">SIUUUUUUUUUU 🔥🔥🔥</div>
+    </div>
+
+    <script>
+        function sayYes() {
+            document.querySelector(".buttons").style.display = "none";
+            document.getElementById("message").style.display = "block";
+        }
+
+        function moveNo() {
+            let button = document.getElementById("no");
+            let maxX = window.innerWidth - 100;
+            let maxY = window.innerHeight - 100;
+
+            let randomX = Math.random() * maxX;
+            let randomY = Math.random() * maxY;
+
+            button.style.left = randomX + "px";
+            button.style.top = randomY + "px";
+
+            button.innerText = "Still no?";
+        }
+    </script>
+
+</body>
+</html>
